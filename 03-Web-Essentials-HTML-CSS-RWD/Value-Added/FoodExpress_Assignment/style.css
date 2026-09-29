@@ -1,0 +1,312 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #333333;
+    background-color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding: 18px 40px;
+    background-color: #1a472a;
+    color: #ffffff;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.cart {
+    margin-left: auto;
+    font-size: 16px;
+    white-space: nowrap;
+}
+
+
+/* Main */
+
+main {
+    flex: 1;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px;
+}
+
+section {
+    margin-bottom: 50px;
+}
+
+section h1,
+section h2 {
+    margin-bottom: 25px;
+}
+
+
+/* Restaurant Listing */
+
+.restaurants {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.card {
+    position: relative;
+    padding: 20px;
+    border: 1px solid #dddddd;
+    border-radius: 8px;
+    background-color: #ffffff;
+}
+
+.card img {
+    width: 100%;
+    max-width: 300px;
+    height: 300px;
+    display: block;
+    object-fit: cover;
+    margin: 0 auto 20px;
+}
+
+.card h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.cuisine {
+    font-size: 15px;
+    margin-bottom: 12px;
+}
+
+
+/* Ratings */
+
+.rating {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 12px 0;
+}
+
+.premium-rating {
+    color: #ffd700;
+}
+
+.regular-rating {
+    color: #7f8c8d;
+}
+
+
+/* Premium Partner */
+
+.premium {
+    border: 2px solid #ffd700;
+}
+
+.premium-badge {
+    display: inline-block;
+    padding: 6px 10px;
+    background-color: #ffd700;
+    color: #333333;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 4px;
+    margin-bottom: 5px;
+}
+
+
+/* Button */
+
+.card button {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 4px;
+    background-color: #27ae60;
+    color: #ffffff;
+    font-size: 14px;
+    cursor: pointer;
+    margin-top: 8px;
+}
+
+.card button:hover {
+    opacity: 0.9;
+}
+
+
+/* Offers and Contact */
+
+#offers,
+#contact {
+    border-top: 1px solid #dddddd;
+    padding-top: 30px;
+}
+
+#contact a {
+    color: #1a472a;
+}
+
+
+/* Footer */
+
+footer {
+    background-color: #34495e;
+    color: #ffffff;
+    padding: 35px 40px;
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.footer-section h2 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.footer-section a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.footer-section a:hover {
+    text-decoration: underline;
+}
+
+.footer-section p {
+    max-width: 300px;
+    line-height: 1.5;
+}
+
+.copyright {
+    width: 100%;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #ffffff;
+}
+
+
+/* Tablet */
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+
+    .restaurants {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+/* Mobile */
+
+@media screen and (max-width: 767px) {
+
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+        padding: 20px;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .cart {
+        margin-left: 0;
+    }
+
+    main {
+        padding: 25px 20px;
+    }
+
+    .restaurants {
+        grid-template-columns: 1fr;
+    }
+
+    .card img {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    footer {
+        flex-direction: column;
+        padding: 30px 20px;
+    }
+
+}
+
+
+/* Print */
+
+@media print {
+
+    header {
+        position: static;
+        background-color: #ffffff;
+        color: #000000;
+    }
+
+    nav,
+    .cart,
+    .card button {
+        display: none;
+    }
+
+    .restaurants {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    footer {
+        background-color: #ffffff;
+        color: #000000;
+    }
+
+    .footer-section a {
+        color: #000000;
+    }
+
+}

@@ -1,0 +1,272 @@
+<!-- QUICKCART GROCERY DELIVERY PORTAL - VERSION 1 (EXISTING CODE) -->
+<!-- Students must ADD features to this, NOT modify existing code -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuickCart - Grocery Delivery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <div class="logo">QuickCart</div>
+    <nav>
+        <ul>
+            <li>Home</li>
+            <li>Categories</li>
+            <li>Offers</li>
+            <li>Contact</li>
+        </ul>
+    </nav>
+    <input type="text" placeholder="Search products">
+</header>
+
+<section class="hero">
+    <h1>Fresh Groceries Delivered</h1>
+    <button>Shop Now</button>
+</section>
+
+
+<!-- NEW FEATURE 5: DELIVERY INFORMATION BANNER -->
+<section class="delivery-banner">
+    <div>🚚 Free Delivery Above ₹500</div>
+    <div>⏱️ 30 Min Delivery</div>
+    <div>💚 Fresh Guarantee</div>
+</section>
+
+
+<section class="categories">
+    <h2>Categories</h2>
+    <div>Fruits</div>
+    <div>Vegetables</div>
+    <div>Dairy</div>
+    <div>Snacks</div>
+</section>
+
+
+<!-- NEW FEATURE 4: TOP SELLING PRODUCTS -->
+<section class="top-selling">
+    <h2>Top Selling Products</h2>
+
+    <div class="top-selling-container">
+
+        <div class="top-selling-card">
+            <span class="trending-badge">🔥 Trending</span>
+            <h3>Milk</h3>
+            <p>₹60</p>
+            <button>View Product</button>
+        </div>
+
+        <div class="top-selling-card">
+            <span class="trending-badge">🔥 Trending</span>
+            <h3>Banana</h3>
+            <p>₹50</p>
+            <button>View Product</button>
+        </div>
+
+        <div class="top-selling-card">
+            <span class="trending-badge">🔥 Trending</span>
+            <h3>Chips</h3>
+            <p>₹30</p>
+            <button>View Product</button>
+        </div>
+
+    </div>
+</section>
+
+
+<section class="products">
+
+    <div class="product-card">
+
+        <!-- NEW FEATURE 1: WISHLIST -->
+        <button class="wishlist-button" type="button" onclick="toggleWishlist(this)" aria-label="Add Apple to wishlist">🤍</button>
+
+        <h3>Apple</h3>
+
+        <!-- NEW FEATURE 2: AVAILABILITY -->
+        <div class="availability in-stock">✓ In Stock</div>
+
+        <p>₹120</p>
+
+        <!-- NEW FEATURE 3: RATING -->
+        <div class="rating">★ 4.5/5 <span>(245 reviews)</span></div>
+
+        <button>Add To Cart</button>
+    </div>
+
+
+    <div class="product-card">
+
+        <!-- NEW FEATURE 1: WISHLIST -->
+        <button class="wishlist-button" type="button" onclick="toggleWishlist(this)" aria-label="Add Milk to wishlist">🤍</button>
+
+        <h3>Milk</h3>
+
+        <!-- NEW FEATURE 2: AVAILABILITY -->
+        <div class="availability in-stock">✓ In Stock</div>
+
+        <p>₹60</p>
+
+        <!-- NEW FEATURE 3: RATING -->
+        <div class="rating">★ 4.8/5 <span>(312 reviews)</span></div>
+
+        <button>Add To Cart</button>
+    </div>
+
+
+    <div class="product-card">
+
+        <!-- NEW FEATURE 1: WISHLIST -->
+        <button class="wishlist-button" type="button" onclick="toggleWishlist(this)" aria-label="Add Bread to wishlist">🤍</button>
+
+        <h3>Bread</h3>
+
+        <!-- NEW FEATURE 2: AVAILABILITY -->
+        <div class="availability out-of-stock">✗ Out of Stock</div>
+
+        <p>₹45</p>
+
+        <!-- NEW FEATURE 3: RATING -->
+        <div class="rating">★ 3.9/5 <span>(156 reviews)</span></div>
+
+        <button>Add To Cart</button>
+    </div>
+
+
+    <div class="product-card">
+
+        <!-- NEW FEATURE 1: WISHLIST -->
+        <button class="wishlist-button" type="button" onclick="toggleWishlist(this)" aria-label="Add Orange to wishlist">🤍</button>
+
+        <h3>Orange</h3>
+
+        <!-- NEW FEATURE 2: AVAILABILITY -->
+        <div class="availability in-stock">✓ In Stock</div>
+
+        <p>₹90</p>
+
+        <!-- NEW FEATURE 3: RATING -->
+        <div class="rating">★ 4.6/5 <span>(298 reviews)</span></div>
+
+        <button>Add To Cart</button>
+    </div>
+
+
+    <div class="product-card">
+
+        <!-- NEW FEATURE 1: WISHLIST -->
+        <button class="wishlist-button" type="button" onclick="toggleWishlist(this)" aria-label="Add Cheese to wishlist">🤍</button>
+
+        <h3>Cheese</h3>
+
+        <!-- NEW FEATURE 2: AVAILABILITY -->
+        <div class="availability limited-stock">⚠ Limited Stock</div>
+
+        <p>₹180</p>
+
+        <!-- NEW FEATURE 3: RATING -->
+        <div class="rating">★ 4.7/5 <span>(187 reviews)</span></div>
+
+        <button>Add To Cart</button>
+    </div>
+
+
+    <div class="product-card">
+
+        <!-- NEW FEATURE 1: WISHLIST -->
+        <button class="wishlist-button" type="button" onclick="toggleWishlist(this)" aria-label="Add Chips to wishlist">🤍</button>
+
+        <h3>Chips</h3>
+
+        <!-- NEW FEATURE 2: AVAILABILITY -->
+        <div class="availability in-stock">✓ In Stock</div>
+
+        <p>₹30</p>
+
+        <!-- NEW FEATURE 3: RATING -->
+        <div class="rating">★ 4.2/5 <span>(423 reviews)</span></div>
+
+        <button>Add To Cart</button>
+    </div>
+
+
+    <div class="product-card">
+
+        <!-- NEW FEATURE 1: WISHLIST -->
+        <button class="wishlist-button" type="button" onclick="toggleWishlist(this)" aria-label="Add Banana to wishlist">🤍</button>
+
+        <h3>Banana</h3>
+
+        <!-- NEW FEATURE 2: AVAILABILITY -->
+        <div class="availability in-stock">✓ In Stock</div>
+
+        <p>₹50</p>
+
+        <!-- NEW FEATURE 3: RATING -->
+        <div class="rating">★ 4.9/5 <span>(334 reviews)</span></div>
+
+        <button>Add To Cart</button>
+    </div>
+
+
+    <div class="product-card">
+
+        <!-- NEW FEATURE 1: WISHLIST -->
+        <button class="wishlist-button" type="button" onclick="toggleWishlist(this)" aria-label="Add Butter to wishlist">🤍</button>
+
+        <h3>Butter</h3>
+
+        <!-- NEW FEATURE 2: AVAILABILITY -->
+        <div class="availability limited-stock">⚠ Limited Stock</div>
+
+        <p>₹75</p>
+
+        <!-- NEW FEATURE 3: RATING -->
+        <div class="rating">★ 4.4/5 <span>(201 reviews)</span></div>
+
+        <button>Add To Cart</button>
+    </div>
+
+
+    <!-- STUDENTS: Add to each product card:
+         1. Heart icon (❤️/🤍) in top-right - Feature 1
+         2. Availability indicator below product name - Feature 2
+         3. Star rating below price - Feature 3
+    -->
+
+</section>
+
+
+<section class="reviews">
+    <h2>Customer Reviews</h2>
+    <p>Excellent Service!</p>
+</section>
+
+
+<footer>
+    <p>About Us | Contact Us | Social Links</p>
+</footer>
+
+
+<!-- NEW FEATURE 1: WISHLIST TOGGLE -->
+<script>
+    function toggleWishlist(button) {
+        if (button.textContent.trim() === "🤍") {
+            button.textContent = "❤️";
+            button.setAttribute("aria-label", "Remove from wishlist");
+            button.classList.add("wishlist-selected");
+        } else {
+            button.textContent = "🤍";
+            button.setAttribute("aria-label", "Add to wishlist");
+            button.classList.remove("wishlist-selected");
+        }
+    }
+</script>
+
+</body>
+</html>

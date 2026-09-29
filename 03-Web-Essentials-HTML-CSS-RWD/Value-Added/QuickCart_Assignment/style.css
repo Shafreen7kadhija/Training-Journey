@@ -1,0 +1,488 @@
+/* QUICKCART GROCERY DELIVERY PORTAL - VERSION 1 */
+/* Existing styles are preserved and new feature styles are added */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333333;
+    overflow-x: hidden;
+}
+
+
+/* ============================= */
+/* EXISTING HEADER */
+/* ============================= */
+
+header {
+    background-color: #2e7d32;
+    color: white;
+    padding: 15px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+nav li {
+    font-size: 16px;
+    cursor: pointer;
+}
+
+header input {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    width: 220px;
+}
+
+
+/* ============================= */
+/* EXISTING HERO */
+/* ============================= */
+
+.hero {
+    background-color: #e8f5e9;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.hero button {
+    padding: 12px 25px;
+    background-color: #2e7d32;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    min-height: 44px;
+}
+
+
+/* ============================= */
+/* NEW FEATURE 5: DELIVERY BANNER */
+/* ============================= */
+
+.delivery-banner {
+    background-color: #d9f2e6;
+    padding: 18px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    text-align: center;
+    color: #1b5e20;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+
+/* ============================= */
+/* EXISTING CATEGORIES */
+/* ============================= */
+
+.categories {
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.categories h2 {
+    margin-bottom: 20px;
+}
+
+.categories div {
+    display: inline-block;
+    padding: 12px 20px;
+    margin: 5px;
+    background-color: white;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+}
+
+
+/* ============================= */
+/* NEW FEATURE 4: TOP SELLING */
+/* ============================= */
+
+.top-selling {
+    background-color: #e3f2fd;
+    padding: 30px 20px;
+    margin: 20px 0;
+}
+
+.top-selling h2 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.top-selling-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.top-selling-card {
+    background-color: white;
+    border: 1px solid #cccccc;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+}
+
+.top-selling-card h3 {
+    font-size: 20px;
+    margin: 25px 0 10px;
+}
+
+.top-selling-card p {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.top-selling-card button {
+    min-height: 44px;
+    padding: 10px 18px;
+    background-color: #2e7d32;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.trending-badge {
+    display: inline-block;
+    background-color: #ff7043;
+    color: white;
+    padding: 6px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+
+/* ============================= */
+/* EXISTING PRODUCTS */
+/* ============================= */
+
+.products {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.product-card {
+    background-color: white;
+    border: 1px solid #dddddd;
+    border-radius: 8px;
+    padding: 20px;
+    position: relative;
+    min-width: 0;
+}
+
+.product-card h3 {
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+
+.product-card > p {
+    font-size: 18px;
+    font-weight: bold;
+    color: #2e7d32;
+    margin-bottom: 12px;
+}
+
+.product-card > button:not(.wishlist-button) {
+    width: 100%;
+    min-height: 44px;
+    padding: 10px;
+    background-color: #2e7d32;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+
+/* ============================= */
+/* NEW FEATURE 1: WISHLIST */
+/* ============================= */
+
+.wishlist-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    font-size: 24px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wishlist-button:hover {
+    transform: scale(1.1);
+}
+
+.wishlist-selected {
+    color: #e53935;
+}
+
+
+/* ============================= */
+/* NEW FEATURE 2: AVAILABILITY */
+/* ============================= */
+
+.availability {
+    display: inline-block;
+    margin-bottom: 12px;
+    padding: 5px 9px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.in-stock {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+}
+
+.limited-stock {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+.out-of-stock {
+    background-color: #ffebee;
+    color: #c62828;
+}
+
+
+/* ============================= */
+/* NEW FEATURE 3: RATINGS */
+/* ============================= */
+
+.rating {
+    margin-bottom: 15px;
+    font-size: 15px;
+    color: #f9a825;
+    font-weight: bold;
+}
+
+.rating span {
+    color: #666666;
+    font-weight: normal;
+}
+
+
+/* ============================= */
+/* EXISTING REVIEWS */
+/* ============================= */
+
+.reviews {
+    padding: 30px 20px;
+    text-align: center;
+    background-color: white;
+    margin-top: 20px;
+}
+
+.reviews h2 {
+    margin-bottom: 15px;
+}
+
+
+/* ============================= */
+/* EXISTING FOOTER */
+/* ============================= */
+
+footer {
+    background-color: #1b5e20;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+
+/* ============================= */
+/* TABLET RESPONSIVE */
+/* 600px - 1023px */
+/* ============================= */
+
+@media screen and (min-width: 600px) and (max-width: 1023px) {
+
+    header {
+        flex-wrap: wrap;
+    }
+
+    nav ul {
+        gap: 15px;
+    }
+
+    header input {
+        width: 180px;
+    }
+
+    .products {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .top-selling-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .delivery-banner {
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+}
+
+
+/* ============================= */
+/* MOBILE RESPONSIVE */
+/* Below 600px */
+/* ============================= */
+
+@media screen and (max-width: 599px) {
+
+    body {
+        font-size: 16px;
+    }
+
+    header {
+        flex-direction: column;
+        padding: 15px 20px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    header input {
+        width: 100%;
+        max-width: 300px;
+        min-height: 44px;
+    }
+
+    .hero {
+        padding: 35px 20px;
+    }
+
+    .hero h1 {
+        font-size: 26px;
+    }
+
+    .delivery-banner {
+        flex-direction: column;
+        gap: 12px;
+        padding: 18px 20px;
+    }
+
+    .categories {
+        padding: 25px 15px;
+    }
+
+    .categories div {
+        display: block;
+        margin: 8px 0;
+    }
+
+    .top-selling {
+        padding: 25px 15px;
+    }
+
+    .top-selling-container {
+        grid-template-columns: 1fr;
+    }
+
+    .products {
+        grid-template-columns: 1fr;
+        padding: 0 15px;
+        gap: 15px;
+    }
+
+    .product-card {
+        padding: 20px;
+    }
+
+    .product-card h3 {
+        font-size: 18px;
+    }
+
+    .product-card > p {
+        font-size: 18px;
+    }
+
+    .rating {
+        font-size: 16px;
+    }
+
+    .wishlist-button {
+        width: 44px;
+        height: 44px;
+    }
+
+    .hero button,
+    .top-selling-card button,
+    .product-card > button:not(.wishlist-button) {
+        min-height: 44px;
+    }
+
+    footer {
+        padding: 20px 15px;
+    }
+}
+
+
+/* ============================= */
+/* PRINT */
+/* ============================= */
+
+@media print {
+
+    .wishlist-button,
+    header input,
+    .hero button,
+    .top-selling-card button,
+    .product-card > button:not(.wishlist-button) {
+        display: none;
+    }
+
+    body {
+        background-color: white;
+    }
+}

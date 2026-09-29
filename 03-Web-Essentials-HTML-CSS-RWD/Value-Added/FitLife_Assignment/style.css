@@ -1,0 +1,222 @@
+/* FITLIFE GYM MEMBERSHIP PORTAL - VERSION 2 */
+/* Existing styles are preserved and new feature styles are added */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    overflow-x: hidden;
+}
+
+/* Existing Header */
+header {
+    background-color: #1a73e8;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+/* Existing Plans */
+.plans {
+    display: flex;
+    gap: 20px;
+    padding: 40px 20px;
+    justify-content: center;
+}
+
+.plan {
+    position: relative;
+    border: 1px solid #ccc;
+    padding: 20px;
+    width: 250px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.plan h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #202124;
+}
+
+.plan:nth-child(2) h3 {
+    padding-right: 120px;
+}
+
+.plan .price {
+    font-size: 20px;
+    font-weight: bold;
+    color: #1a73e8;
+    margin-bottom: 20px;
+}
+
+.plan button {
+    width: 100%;
+    padding: 10px;
+    background-color: #34a853;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.plan button:hover {
+    background-color: #1e8449;
+}
+
+
+/* ============================= */
+/* NEW FEATURE: POPULAR BADGE */
+/* ============================= */
+
+.popular-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #ffc107;
+    color: #333333;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 8px 12px;
+    border-radius: 4px;
+}
+
+
+/* ============================= */
+/* NEW FEATURE: MEMBERSHIP BENEFITS */
+/* ============================= */
+
+.benefits {
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.benefits h4 {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.benefits p {
+    margin-bottom: 8px;
+}
+
+
+/* ============================= */
+/* NEW FEATURE: TESTIMONIALS */
+/* ============================= */
+
+.testimonials {
+    padding: 20px;
+    max-width: 1000px;
+    margin: 0 auto 40px;
+}
+
+.testimonials h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 24px;
+}
+
+.testimonials-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.testimonial {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial h3 {
+    font-size: 18px;
+    margin-bottom: 12px;
+    color: #202124;
+}
+
+.testimonial p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 12px;
+}
+
+.testimonial .rating {
+    margin-bottom: 0;
+}
+
+
+/* ============================= */
+/* NEW FEATURE: RESPONSIVENESS */
+/* ============================= */
+
+/* Tablet */
+@media screen and (min-width: 600px) and (max-width: 767px) {
+
+    .plans {
+        flex-wrap: wrap;
+    }
+
+    .testimonials-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+/* Mobile */
+@media screen and (max-width: 599px) {
+
+    .plans {
+        flex-direction: column;
+        align-items: center;
+        padding: 30px 20px;
+    }
+
+    .plan {
+        width: 100%;
+        max-width: 350px;
+    }
+
+    .testimonials {
+        padding: 20px;
+    }
+
+    .testimonials-container {
+        grid-template-columns: 1fr;
+    }
+
+    .testimonials h2 {
+        font-size: 22px;
+    }
+
+    .testimonial {
+        padding: 20px;
+    }
+
+    .testimonial p,
+    .benefits,
+    .benefits h4 {
+        font-size: 16px;
+    }
+
+    .plan button {
+        min-height: 44px;
+        font-size: 16px;
+    }
+}

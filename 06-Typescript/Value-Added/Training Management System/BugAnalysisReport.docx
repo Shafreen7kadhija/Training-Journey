@@ -1,0 +1,208 @@
+# Bug Analysis Report
+
+## Training Management System
+
+### 1. Introduction
+
+This report documents the bugs identified and fixed in the TypeScript Training Management System. The objective was to identify the root cause of each compilation issue and apply appropriate TypeScript fixes without changing the intended functionality of the program.
+
+A total of three bugs were identified and corrected.
+
+---
+
+## 2. Bug 1 — Recently Viewed Courses `pop()` Method
+
+### Problem
+
+The `pop()` method originally had the following return type:
+
+```typescript
+pop(): string
+```
+
+However, the JavaScript `Array.pop()` method can return `undefined` when the array is empty.
+
+### Original Code
+
+```typescript
+pop(): string {
+    return this.courses.pop();
+}
+```
+
+### Error
+
+TypeScript reported that:
+
+```text
+Type 'string | undefined' is not assignable to type 'string'.
+```
+
+### Root Cause
+
+The return type was declared as `string`, but `this.courses.pop()` can return either a `string` or `undefined`.
+
+### Fix
+
+The return type was changed to:
+
+```typescript
+pop(): string | undefined {
+    return this.courses.pop();
+}
+```
+
+### Result
+
+The method now correctly represents the possible return values and satisfies TypeScript's type safety.
+
+---
+
+## 3. Bug 2 — Doubt Queue `dequeue()` Method
+
+### Problem
+
+The `dequeue()` method originally declared its return type as `string`.
+
+### Original Code
+
+```typescript
+dequeue(): string {
+    return this.doubts.shift();
+}
+```
+
+### Error
+
+TypeScript reported:
+
+```text
+Type 'string | undefined' is not assignable to type 'string'.
+```
+
+### Root Cause
+
+The `Array.shift()` method can return `undefined` when the queue is empty.
+
+### Fix
+
+The return type was changed to:
+
+```typescript
+dequeue(): string | undefined {
+    return this.doubts.shift();
+}
+```
+
+### Result
+
+The method now safely handles the possibility of an empty queue while maintaining the intended FIFO queue behavior.
+
+---
+
+## 4. Bug 3 — Binary Search `traineeId` Type
+
+### Problem
+
+The `searchTraineeById()` function originally declared the `traineeId` parameter as a `string`.
+
+### Original Code
+
+```typescript
+function searchTraineeById(
+    trainees: Trainee[],
+    traineeId: string
+): Trainee | null
+```
+
+However, the `Trainee` interface defines:
+
+```typescript
+traineeId: number;
+```
+
+### Errors
+
+This caused type errors when comparing the trainee ID with the search value:
+
+```typescript
+trainees[mid].traineeId === traineeId
+```
+
+and:
+
+```typescript
+trainees[mid].traineeId < traineeId
+```
+
+It also caused an error when calling the function with:
+
+```typescript
+searchTraineeById(trainees, 102);
+```
+
+### Root Cause
+
+The function parameter was incorrectly typed as `string`, while trainee IDs are numbers.
+
+### Fix
+
+The parameter was changed to:
+
+```typescript
+function searchTraineeById(
+    trainees: Trainee[],
+    traineeId: number
+): Trainee | null
+```
+
+### Result
+
+The binary search now compares numbers with numbers and correctly finds the trainee with ID `102`.
+
+---
+
+## 5. Verification
+
+After applying all three fixes, the TypeScript source code was compiled successfully.
+
+The following command produced no errors:
+
+```bash
+tsc --noEmit training-management-system.ts
+```
+
+The project was then compiled using:
+
+```bash
+tsc training-management-system.ts
+```
+
+The generated JavaScript file was executed using:
+
+```bash
+node training-management-system.js
+```
+
+### Program Output
+
+```text
+Recently Viewed: React
+Doubt: What is an interface?
+Trainee: { traineeId: 102, name: 'Priya', course: 'JavaScript' }
+Learning Path:
+Programming
+JavaScript
+TypeScript
+Generics
+```
+
+The output confirms that the stack, queue, binary search, and learning path functionality work correctly after the fixes.
+
+---
+
+## 6. Conclusion
+
+The three identified TypeScript bugs were successfully fixed by applying appropriate return types and correcting the trainee ID parameter type.
+
+The final program compiles without TypeScript errors and runs successfully while preserving the intended functionality of the Training Management System.

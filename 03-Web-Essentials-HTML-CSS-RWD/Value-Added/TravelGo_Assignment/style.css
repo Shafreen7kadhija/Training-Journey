@@ -1,0 +1,395 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #2c3e50;
+    background-color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    padding: 18px 40px;
+    background-color: #1b5e20;
+    color: #ffffff;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    margin-right: 40px;
+}
+
+nav {
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.cart {
+    margin-left: auto;
+}
+
+/* Main */
+main {
+    flex: 1;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px;
+}
+
+section {
+    margin-bottom: 50px;
+}
+
+section h2 {
+    margin-bottom: 30px;
+}
+
+/* Hero Banner */
+.banner {
+    width: 100%;
+    min-height: 300px;
+    margin-bottom: 50px;
+    padding: 70px 50px;
+    background-color: #e8f5e9;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+}
+
+.banner-content {
+    max-width: 650px;
+}
+
+.banner h1 {
+    margin: 0 0 15px;
+    font-size: 40px;
+    color: #1b5e20;
+}
+
+.banner p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.banner-button {
+    display: inline-block;
+    padding: 12px 22px;
+    background-color: #27ae60;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.banner-button:hover {
+    background-color: #219150;
+}
+
+/* Packages */
+.packages-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.package {
+    position: relative;
+    padding: 20px;
+    border: 1px solid #ecf0f1;
+    border-radius: 8px;
+    background-color: #ffffff;
+}
+
+.package img {
+    width: 100%;
+    height: 200px;
+    display: block;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 15px;
+}
+
+.package h3 {
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+.duration {
+    margin: 8px 0;
+    color: #555555;
+}
+
+.price,
+.discounted-price {
+    font-size: 16px;
+    font-weight: bold;
+    color: #27ae60;
+}
+
+.original-price {
+    margin: 8px 0 3px;
+    color: #7f8c8d;
+    text-decoration: line-through;
+}
+
+.discounted-price {
+    margin: 3px 0 15px;
+}
+
+.featured {
+    border: 2px solid #f1c40f;
+}
+
+.featured-badge,
+.discount-badge {
+    display: inline-block;
+    padding: 5px 9px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.featured-badge {
+    background-color: #f1c40f;
+    color: #2c3e50;
+}
+
+.discount-badge {
+    background-color: #e74c3c;
+    color: #ffffff;
+}
+
+.package button {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 4px;
+    background-color: #27ae60;
+    color: #ffffff;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.package button:hover {
+    opacity: 0.9;
+}
+
+/* Offers */
+.offers,
+.contact {
+    border-top: 1px solid #ecf0f1;
+    padding-top: 30px;
+}
+
+.offers p {
+    line-height: 1.6;
+}
+
+/* Contact Form */
+.contact form {
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact label {
+    margin: 12px 0 6px;
+    font-weight: bold;
+}
+
+.contact input,
+.contact select,
+.contact textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #bdc3c7;
+    border-radius: 4px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+.contact textarea {
+    resize: vertical;
+}
+
+.contact button {
+    width: fit-content;
+    margin-top: 20px;
+    padding: 11px 22px;
+    border: none;
+    border-radius: 4px;
+    background-color: #27ae60;
+    color: #ffffff;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.contact button:hover {
+    opacity: 0.9;
+}
+
+/* Footer */
+footer {
+    padding: 30px 40px;
+    background-color: #34495e;
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 160px;
+}
+
+.footer-section h3 {
+    margin: 0 0 8px;
+}
+
+.footer-section p {
+    margin: 0;
+    line-height: 1.5;
+}
+
+.footer-section a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.footer-section a:hover {
+    text-decoration: underline;
+}
+
+.copyright {
+    width: 100%;
+    margin: 10px 0 0;
+    padding-top: 15px;
+    border-top: 1px solid #bdc3c7;
+}
+
+/* Tablet */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+
+    .packages-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    main {
+        padding: 30px;
+    }
+}
+
+/* Mobile */
+@media screen and (max-width: 767px) {
+
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+    }
+
+    .logo {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+
+    nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    main {
+        padding: 25px 20px;
+    }
+
+    .banner {
+        padding: 45px 25px;
+    }
+
+    .banner h1 {
+        font-size: 30px;
+    }
+
+    .banner p {
+        font-size: 16px;
+    }
+
+    .packages-container {
+        grid-template-columns: 1fr;
+    }
+
+    .package img {
+        height: 200px;
+    }
+
+    footer {
+        flex-direction: column;
+        padding: 25px 20px;
+    }
+}
+
+/* Print */
+@media print {
+
+    header {
+        position: static;
+        background-color: #ffffff;
+        color: #000000;
+    }
+
+    nav,
+    .cart,
+    .package button,
+    .banner-button,
+    .contact button {
+        display: none;
+    }
+
+    .banner {
+        background-color: #ffffff;
+        border: 1px solid #000000;
+    }
+
+    .packages-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    footer {
+        background-color: #ffffff;
+        color: #000000;
+    }
+
+    .footer-section a {
+        color: #000000;
+    }
+}
